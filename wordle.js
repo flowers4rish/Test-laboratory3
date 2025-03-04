@@ -15,9 +15,8 @@ var words = [
     "VOTER", "VICES", "VOICE", "VOLTS", "VINES", "WALTZ", "WHOLE", "WATER", "WITCH", "WIDTH",
     "YOUTH", "YIELD", "YARNS", "YARDS", "YEARS", "ZEBRA", "ZINES", "ZONES", "ZESTY", "ZEROS"
 ];
-
-var winSound = new Audio('winSound.mp3'); 
-var loseSound = new Audio('loseSound.mp3');
+var winSound = new Audio('winSound.mp3');
+var loseSound = new Audio('loseSound.mp3);
 
 function setupGame() {
     chosenWord = words[Math.floor(Math.random() * words.length)];
@@ -51,18 +50,18 @@ function checkWord() {
     }
     
     if (correctCount === 5) {
+        winSound.play();
         alert("Congrats! You guessed it correctly. Reload the page to play again!");
         score = 5;
         health = -1;
-        winSound.play()
         return;
     }
 
     health--;
     if (health === 0) {
+        loseSound.play();
         alert(Nice try! The word was ${chosenWord}. Reload to play again.);
         health = -1;
-        loseSound.play()
         return;
     }
 }
