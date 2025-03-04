@@ -11,6 +11,9 @@
                 display: flex;
                 flex-direction: column;
                 background-color: white;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
             }
 
             h1 {
@@ -45,11 +48,28 @@
                 width: 100px;
                 height: 50px;
             }
+
+            .slide-text {
+                display: inline-block; 
+                transform: translateX(-100px); 
+                opacity: 0; 
+                animation: slide-in 0.7s ease-out forwards; 
+            }
+            @keyframes slide-in {
+                from {
+                    transform: translateX(-100px); /* Start off-screen to the left */
+                    opacity: 0; /* Initially invisible */
+                }
+                to {
+                    transform: translateX(0); /* Slide into view */
+                    opacity: 1; /* Become fully visible */
+                }
+            }
         </style>
         <script src="wordle.js"></script>
     </head>
     <body onload="setupGame()">
-        <h1>Wordle</h1>
+        <h1 class="slide-text">Wordle</h1>
         
 
         <div id="r-0" class="r-0 box">
