@@ -63,5 +63,6 @@ function checkWord() {
         alert(`Nice try! The word was ${chosenWord}. Reload to play again.`);
         health = -1;
         loseSound.play();
+        return;
     }
 }
