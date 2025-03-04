@@ -16,8 +16,8 @@ var words = [
     "YOUTH", "YIELD", "YARNS", "YARDS", "YEARS", "ZEBRA", "ZINES", "ZONES", "ZESTY", "ZEROS"
 ];
 
-var winSound = new Audio(winSound.mp3);
-var loseSound = new Audio(winSound.mp3);
+var winSound = new Audio('winSound.mp3');
+var loseSound = new Audio('loseSound.mp3');
 
 function setupGame() {
     chosenWord = words[Math.floor(Math.random() * words.length)];
