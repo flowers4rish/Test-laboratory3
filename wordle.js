@@ -51,17 +51,17 @@ function checkWord() {
     }
     
     if (correctCount === 5) {
-        winSound.play();
         alert("Congrats! You guessed it correctly. Reload the page to play again!");
         score = 5;
         health = -1;
+        winSound.play();
         return;
     }
 
     health--;
     if (health === 0) {
-        loseSound.play();
         alert(`Nice try! The word was ${chosenWord}. Reload to play again.`);
         health = -1;
+        loseSound.play();
     }
 }
