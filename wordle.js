@@ -16,6 +16,9 @@ var words = [
     "YOUTH", "YIELD", "YARNS", "YARDS", "YEARS", "ZEBRA", "ZINES", "ZONES", "ZESTY", "ZEROS"
 ];
 
+var winSound = new Audio(winSound.mp3);
+var loseSound = new Audio(winSound.mp3);
+
 function setupGame() {
     chosenWord = words[Math.floor(Math.random() * words.length)];
     console.log("Chosen Word: " + chosenWord);
@@ -48,6 +51,7 @@ function checkWord() {
     }
     
     if (correctCount === 5) {
+        winSound.play();
         alert("Congrats! You guessed it correctly. Reload the page to play again!");
         score = 5;
         health = -1;
@@ -56,6 +60,7 @@ function checkWord() {
 
     health--;
     if (health === 0) {
+        loseSound.play();
         alert(`Nice try! The word was ${chosenWord}. Reload to play again.`);
         health = -1;
     }
