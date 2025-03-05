@@ -40,6 +40,11 @@ function checkWord() {
         return;
     }
 
+    if (answer.includes(1) || answer.includes(2) || answer.includes(3) || answer.includes(4) || answer.includes(5) || answer.includes(6) || answer.includes(7) || answer.includes(8) || answer.includes(9) || answer.includes(0)) {
+        alert("Invalid input. You inputted a number.");
+        return;
+    }
+
     let correctCount = 0;
     let box0 = document.getElementById(`r-${rowIndex}-0`);
     box0.innerText = answer[0];
